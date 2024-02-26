@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/face-api.min.js"></script>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form id="signupForm" action="/signup" method="post">
+        <input type="text" name="usn" placeholder="Username" required><br>
+        <input type="password" name="pwd" placeholder="Password" required><br>
+        <input type="text" name="name" placeholder="Name" required><br>
+        <label for="role">Choose Role:</label>
+        <select name="role" id="role">
+            <option value="SI">Shift Incharge</option>
+            <option value="MO">Machine Operator</option>
+            <option value="PM">Product Manager</option>
+        </select><br>
+        <!-- Add button to trigger face scanning -->
+        <button type="button" id="scanFaceBtn">Scan Face</button><br>
+        <input type="hidden" name="face_features" id="faceFeaturesInput"> <!-- Hidden input field to store face features -->
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- Include jQuery -->
+    <script src="/static/face-recognition.js"></script> <!-- Include your face recognition JavaScript file -->
+</body>
+</html>
